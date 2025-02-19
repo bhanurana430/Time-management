@@ -3,7 +3,7 @@ import streamlit as st
 import sqlite3
 import datetime
 import pandas as pd
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 # Database setup
 conn = sqlite3.connect("time_manager.db", check_same_thread=False)
@@ -50,8 +50,8 @@ def progress_tracker():
     st.metric("Hours Logged", logs_today)
 
     # Progress Visualization
-    progress_data = pd.read_sql("SELECT date, COUNT(*) as total_goals, SUM(completed) as completed_goals FROM daily_goals GROUP BY date", conn)
-    st.line_chart(progress_data.set_index('date'))
+    # progress_data = pd.read_sql("SELECT date, COUNT(*) as total_goals, SUM(completed) as completed_goals FROM daily_goals GROUP BY date", conn)
+    # st.line_chart(progress_data.set_index('date'))
 
 def hourly_log():
     st.divider()
